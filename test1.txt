@@ -1,2 +1,6 @@
 Inegration testing on 19/12/24.
 Checking if jenkins build is trigering
+
+Inegration testing on 20/12/24.
+Checking if jenkins build is trigering
+
