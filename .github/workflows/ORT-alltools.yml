@@ -1,4 +1,4 @@
-name: ORT Analyzer
+name: ORT Github actions test
 
 on:
   workflow_dispatch:
