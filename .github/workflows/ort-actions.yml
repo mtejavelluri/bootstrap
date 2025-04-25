@@ -1,0 +1,32 @@
+name: ORT CI Scan
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  ort:
+    name: Run ORT with ScanCode and SBOM
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run ORT CI Action
+        uses: oss-review-toolkit/ort-ci-github-action@main
+        with:
+          ort-version: '53.0.0'
+          scanner: 'ScanCode'
+          report-formats: 'WebApp,CycloneDx,SpdxDocument'
+          fail-on: 'issues'
+
+      - name: Upload ORT Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: ort-report
+          path: ~/.ort/results
