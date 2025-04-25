@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run ORT CI Action
-        uses: oss-review-toolkit/ort-ci-github-action@main
+        uses: oss-review-toolkit/ort-ci-github-action@v1
         with:
           ort-version: '53.0.0'
           scanner: 'ScanCode'
