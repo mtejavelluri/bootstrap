@@ -1,0 +1,14 @@
+name: SCANOSS Code Scan (minimal)
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  scanoss:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run SCANOSS Code Scan
+        uses: scanoss/code-scan-action@v1
